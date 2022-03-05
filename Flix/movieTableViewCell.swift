@@ -16,12 +16,14 @@ class movieTableViewCell: UITableViewCell {
     
     func configure(with movie: Movie) {
         let baseURL = "https://image.tmdb.org/t/p/w185"
-        let posterPath = movie.imageURL
-        let posterURL = URL(string: baseURL + posterPath)
+        let defaultPosterURL = "/original/wwemzKWzjKYJFfCeiB57q3r4Bcm.svg"
+        let defaultTitle = "No Title Found"
+        let defaultDescription = "No Description Found"
+        let posterURL = URL(string: baseURL + (movie.posterURL ?? defaultPosterURL))
         
         movieImageView.af.setImage(withURL: posterURL!)
-        titleLabel.text = movie.title
-        descriptionLabel.text = movie.description
+        titleLabel.text = movie.title ?? defaultTitle
+        descriptionLabel.text = movie.description ?? defaultDescription
     }
 
 }

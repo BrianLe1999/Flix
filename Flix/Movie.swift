@@ -7,7 +7,10 @@
 
 import Foundation
 struct Movie {
-    let title: String;
-    let description: String;
-    let imageURL: String;
+    let id: Int?;
+    let title: String?;
+    let description: String?;
+    let posterURL: String?;
+    let backdropURL: String?;
+    let releaseDate: String?;
 }
